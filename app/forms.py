@@ -1,7 +1,7 @@
 from cProfile import label
 from attr import attr, attrs, field
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UsernameField
 from django.contrib.auth.models import User
 from matplotlib import widgets
 
@@ -14,5 +14,9 @@ class CustomerRegistrationForm(UserCreationForm):
        fields=['username','email','password1','password2']
        labels={'email':'Email'}
        widgets={'username':forms.TextInput(attrs={'class':'form-control'})}
+       
+class LoginFrom(AuthenticationForm):
+    pass
+    # username=UsernameField(widget=forms.TextInput(attrs={'autofocus':True,'class':}))
        
        
